@@ -17,7 +17,7 @@ const jwt=require('jsonwebtoken');
 
    const register = (acno,username,password ) => {
   
-   return db.User.findOne({acno})//data
+   return db.User.findOne({acno})//asynchrouns call
    .then(user=>{
     if(user){
    
@@ -48,7 +48,7 @@ const jwt=require('jsonwebtoken');
   }
 
 
-
+ 
 
 
 
@@ -74,7 +74,7 @@ const jwt=require('jsonwebtoken');
       status:false,
       statusCode:400,
       message:'invalid userdetails'
-  }
+  } 
   }
   })
  }
@@ -122,7 +122,7 @@ const jwt=require('jsonwebtoken');
   return db.User.findOne({acno,pswd})//data
   .then( user=>{
     if(user){
-      user.balance >= amount;
+      if(user.balance >= amount){
       user.transaction.push({
         Type:"Debit",
         Amount:amount
@@ -133,7 +133,7 @@ const jwt=require('jsonwebtoken');
         statusCode:200,
         message:`${amount} is debited and balance is ${user.balance}`
       }    
-      
+    }
     }
     else{
       return{

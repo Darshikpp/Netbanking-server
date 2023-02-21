@@ -26,9 +26,17 @@ basic steps
     patch-update the data completely
     delete-dele the data completely 
 
-9)http response code
+9)HTTP Response Code
+    1xx - Information
+    2xx - successful
+    3xx - redirection
+    4xx - Client Error
+    5xx - Server Error
 
-   1XX
+
+
+
+     
 
     API request
     registration request
@@ -40,12 +48,14 @@ basic steps
 
 
 
+    jwt token -authentication
+    to check login or not
+    login...........token generate---->client-----------req to deposite+token------>server token check?
 
-10)
-   install JWT-  npm i jsonwebtoken
+10) install JWT-  npm i jsonwebtoken
    To generate a token- sign()
 
-   11)middileware
+   11)middileware--to verify the token
      it comes in the middle of the request and reponse cycle of the nodejs execution process
       
 
